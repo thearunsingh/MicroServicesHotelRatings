@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserServices{
 	List<Rating> list = Arrays.asList(ratingArray);
 	List<Rating> collect = list.stream().map(rating -> {
 		//ResponseEntity<Hotel> forEntity = template.getForEntity("http://HOTEL-SERVICE/hotels/"+rating.getHotelId(), Hotel.class);
-	    hotelfeignclient.gethotel(rating .getHotelId());
+	    hotelfeignclient.gethotel(rating.getHotelId());
 		Hotel hotel = hotelfeignclient.gethotel(rating .getHotelId());
 	    rating.setHotel(hotel);
 	    return rating;
